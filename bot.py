@@ -1,12 +1,12 @@
 import discord
 from dora_client import Dora_client
 
-TOKEN = 'NzQ1NjY4ODc3NzA2NDYxMzQ3.Xz1IQg.WY9_WQMwN0svQdXM9gkykDsUr4E'
+TOKEN = "your token"
 client = discord.Client()
 bot = Dora_client()
 
 
-bot.key = 'lvklvsdN'
+bot.key = 'your partner key'
 last_message = {}
 rating_stop = {}
 
