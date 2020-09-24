@@ -5,12 +5,9 @@ import json
 with open('config.json') as f:
     config = json.load(f)
 
-print(config['token'])
-
 TOKEN = config['token']
 client = discord.Client()
 bot = Dora_client()
-
 
 bot.key = config['key']
 last_message = {}
