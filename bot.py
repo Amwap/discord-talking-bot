@@ -52,8 +52,6 @@ async def on_message(message):
                 rating_stop[message.author] = last_message[message.channel.id]
                 print(message.author, response)
 
-
-
         else:
             response = bot.answer(text)
             last_message[message.channel.id] = response['response_id']
