@@ -1,12 +1,18 @@
 import discord
 from dora_client import Dora_client
+import json
 
-TOKEN = "your token"
+with open('config.json') as f:
+    config = json.load(f)
+
+print(config['token'])
+
+TOKEN = config['token']
 client = discord.Client()
 bot = Dora_client()
 
 
-bot.key = 'your partner key'
+bot.key = config['key']
 last_message = {}
 rating_stop = {}
 
