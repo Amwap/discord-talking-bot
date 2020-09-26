@@ -25,14 +25,13 @@ async def on_message(message):
     lowtext = text.lower().strip()
     if message.author == client.user:
         return
-
-    else:
+    elif message.content.startswith('d!'):
         if lowtext.startswith('add'):
             try:
                 arg1, arg2 = text.replace('add', '').split('=')
                 author = f'discord {message.author.id}'
                 response = bot.learn(arg1, arg2, author)
-                answer = response['system_message']
+                answer = response['answer']
 
             except IndexError:
                 answer = 'Ошибочная команда. попробуй "d! add вопрос = ответ"'
@@ -45,7 +44,7 @@ async def on_message(message):
                 if lowtext.startswith('r+'): operator = 'rup'
                 if lowtext.startswith('r-'): operator = 'rdown'
                 response = bot.rating(operator, last_message[message.channel.id])
-                answer = response['system_message']
+                answer = response['answer']
                 rating_stop[message.author] = last_message[message.channel.id]
                 print(message.author, response)
 
